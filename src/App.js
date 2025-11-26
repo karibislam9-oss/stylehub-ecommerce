@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ShoppingCart, User, Search, Menu, X, Star, Heart, Filter } from 'lucide-react';
+import { ShoppingCart, User, Search, Menu, X, Star, Heart } from 'lucide-react';
 
 const EcommerceStore = () => {
   const [cart, setCart] = useState([]);
@@ -12,18 +12,18 @@ const EcommerceStore = () => {
     { id: 1, name: 'Premium Cotton Shirt', category: 'shirt', price: 1299, image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400', rating: 4.5, gender: 'men' },
     { id: 2, name: 'Formal Dress Shirt', category: 'shirt', price: 1599, image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400', rating: 4.8, gender: 'men' },
     { id: 3, name: 'Casual T-Shirt', category: 'shirt', price: 599, image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400', rating: 4.2, gender: 'men' },
-    { id: 4, name: 'Women\'s Blouse', category: 'shirt', price: 1199, image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400', rating: 4.6, gender: 'women' },
+    { id: 4, name: 'Women Blouse', category: 'shirt', price: 1199, image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400', rating: 4.6, gender: 'women' },
     { id: 5, name: 'Denim Jeans', category: 'pant', price: 1899, image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400', rating: 4.7, gender: 'men' },
     { id: 6, name: 'Formal Trousers', category: 'pant', price: 1699, image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400', rating: 4.4, gender: 'men' },
-    { id: 7, name: 'Women\'s Jeans', category: 'pant', price: 1799, image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400', rating: 4.5, gender: 'women' },
+    { id: 7, name: 'Women Jeans', category: 'pant', price: 1799, image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400', rating: 4.5, gender: 'women' },
     { id: 8, name: 'Casual Chinos', category: 'pant', price: 1499, image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400', rating: 4.3, gender: 'men' },
     { id: 9, name: 'Running Shoes', category: 'shoes', price: 2499, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400', rating: 4.9, gender: 'men' },
     { id: 10, name: 'Formal Leather Shoes', category: 'shoes', price: 3299, image: 'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400', rating: 4.6, gender: 'men' },
-    { id: 11, name: 'Women\'s Heels', category: 'shoes', price: 2199, image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400', rating: 4.7, gender: 'women' },
+    { id: 11, name: 'Women Heels', category: 'shoes', price: 2199, image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400', rating: 4.7, gender: 'women' },
     { id: 12, name: 'Sneakers', category: 'shoes', price: 1899, image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400', rating: 4.5, gender: 'women' },
     { id: 13, name: 'Luxury Watch', category: 'watch', price: 4999, image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400', rating: 4.8, gender: 'men' },
     { id: 14, name: 'Smart Watch', category: 'watch', price: 3499, image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400', rating: 4.7, gender: 'men' },
-    { id: 15, name: 'Women\'s Watch', category: 'watch', price: 2999, image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400', rating: 4.6, gender: 'women' },
+    { id: 15, name: 'Women Watch', category: 'watch', price: 2999, image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400', rating: 4.6, gender: 'women' },
     { id: 16, name: 'Elegant Watch', category: 'watch', price: 3799, image: 'https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=400', rating: 4.5, gender: 'women' },
     { id: 17, name: 'Face Cream', category: 'cosmetics', price: 899, image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400', rating: 4.4, gender: 'women' },
     { id: 18, name: 'Perfume', category: 'cosmetics', price: 1999, image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400', rating: 4.7, gender: 'men' },
@@ -81,7 +81,6 @@ const EcommerceStore = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -132,7 +131,6 @@ const EcommerceStore = () => {
             </div>
           </div>
           
-          {/* Mobile Search */}
           <div className="md:hidden mt-4 relative">
             <input
               type="text"
@@ -145,7 +143,6 @@ const EcommerceStore = () => {
           </div>
         </div>
         
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t px-4 py-4">
             <nav className="flex flex-col space-y-3">
@@ -158,7 +155,6 @@ const EcommerceStore = () => {
         )}
       </header>
 
-      {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Welcome to StyleHub</h2>
@@ -169,7 +165,6 @@ const EcommerceStore = () => {
         </div>
       </div>
 
-      {/* Categories */}
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex flex-wrap gap-3 mb-8">
           {categories.map(category => (
@@ -188,7 +183,6 @@ const EcommerceStore = () => {
           ))}
         </div>
 
-        {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredProducts.map(product => (
             <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition group">
@@ -235,7 +229,6 @@ const EcommerceStore = () => {
         </div>
       </div>
 
-      {/* Cart Sidebar */}
       {showCart && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={() => setShowCart(false)}>
           <div
@@ -310,7 +303,6 @@ const EcommerceStore = () => {
         </div>
       )}
 
-      {/* Footer */}
       <footer className="bg-gray-800 text-white py-12 mt-16">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
